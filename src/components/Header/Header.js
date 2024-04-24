@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from 'react'
+import styled from 'styled-components/macro'
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
+import { COLORS, WEIGHTS } from '../../constants'
+import Logo from '../Logo'
+import SuperHeader from '../SuperHeader'
 
 const Header = () => {
   // Our site features two visual headers, but they should be
@@ -12,26 +12,39 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
-        <Logo />
+        <Side>
+          <Logo />
+        </Side>
         <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href='/sale'>Sale</NavLink>
+          <NavLink href='/new'>New&nbsp;Releases</NavLink>
+          <NavLink href='/men'>Men</NavLink>
+          <NavLink href='/women'>Women</NavLink>
+          <NavLink href='/kids'>Kids</NavLink>
+          <NavLink href='/collections'>Collections</NavLink>
         </Nav>
+        <Side />
       </MainHeader>
     </header>
-  );
-};
+  )
+}
 
 const MainHeader = styled.div`
-  padding: 0 32px;
+  padding: 21px 32px 23px;
   border-bottom: 1px solid ${COLORS.gray[300]};
-`;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+`
 
-const Nav = styled.nav``;
+const Nav = styled.nav`
+  display: flex;
+  gap: 3vw;
+`
+
+const Side = styled.div`
+  flex: 1;
+`
 
 const NavLink = styled.a`
   font-size: 1.125rem;
@@ -43,6 +56,6 @@ const NavLink = styled.a`
   &:first-of-type {
     color: ${COLORS.secondary};
   }
-`;
+`
 
-export default Header;
+export default Header
